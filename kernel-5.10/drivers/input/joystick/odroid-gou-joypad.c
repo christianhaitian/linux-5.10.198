@@ -40,7 +40,7 @@
 #include "amlogic-saradc.h"
 
 /*----------------------------------------------------------------------------*/
-#define DRV_NAME "odroidgo_joypad"
+#define DRV_NAME "retrogame_joypad"
 
 /*----------------------------------------------------------------------------*/
 #define	ADC_MAX_VOLTAGE		1800
