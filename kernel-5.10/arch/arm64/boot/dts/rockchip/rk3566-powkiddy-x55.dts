@@ -75,11 +75,11 @@
 		};
 	};
 
-	joypad: gou_joypad {
+	joypad: singleadc-joypad {
                 compatible = "odroidgou-joypad";
 		status = "okay";
 
-                joypad-name = "GO-Ultra Gamepad";
+                joypad-name = "retrogame_joypad";
                 joypad-product = <0x1000>;
                 joypad-revision = <0x0100>;
 		joypad-vendor = <0x484B>;
@@ -92,34 +92,34 @@
 		button-adc-scale = <2>;
 
 		/* adc deadzone range  */
-		button-adc-deadzone = <216>;
+		button-adc-deadzone = <1>;
 
 		/*
 		  specifies fuzz value that is used to filter noise from
 		  the event stream.
 		*/
-		button-adc-fuzz = <54>;
-		button-adc-flat = <54>;
+		button-adc-fuzz = <32>;
+		button-adc-flat = <32>;
 
 		/*
 		  Analog Stick data tuning value(precent)
 		  p = positive direction, n = negative direction
 		  report value = (real_adc_data * tuning_value) / 100
 		*/
-		abs_x-p-tuning = <180>;
-		abs_x-n-tuning = <180>;
+		abs_x-p-tuning = <110>;
+		abs_x-n-tuning = <110>;
 
-		abs_y-p-tuning = <180>;
-		abs_y-n-tuning = <180>;
+		abs_y-p-tuning = <110>;
+		abs_y-n-tuning = <110>;
 
-		abs_rx-p-tuning = <180>;
-		abs_rx-n-tuning = <180>;
+		abs_rx-p-tuning = <110>;
+		abs_rx-n-tuning = <110>;
 
-		abs_ry-p-tuning = <180>;
-		abs_ry-n-tuning = <180>;
+		abs_ry-p-tuning = <110>;
+		abs_ry-n-tuning = <110>;
 
 		/* poll device interval (ms), adc read interval */
-		poll-interval = <10>;
+		poll-interval = <5>;
 
 		/* gpio button auto repeat set value : default disable */
 		/*
@@ -150,22 +150,22 @@
                 sw1 {
                         gpios = <&gpio4 RK_PA0 GPIO_ACTIVE_LOW>;
                         label = "GPIO DPAD-UP";
-                        linux,code = <103>; // 0x220
+                        linux,code = <544>; // 0x220
                 };                
                 sw2 {
                         gpios = <&gpio4 RK_PA1 GPIO_ACTIVE_LOW>;
                         label = "GPIO DPAD-DOWN";
-                        linux,code = <108>; // 0x221
+                        linux,code = <545>; // 0x221
                 };
                 sw3 {
                         gpios = <&gpio3 RK_PD6 GPIO_ACTIVE_LOW>;
                         label = "GPIO DPAD-LEFT";
-                        linux,code = <105>; // 0x222
+                        linux,code = <546>; // 0x222
                 };                
                 sw4 {
                         gpios = <&gpio3 RK_PD7 GPIO_ACTIVE_LOW>;
                         label = "GPIO DPAD-RIGHT";
-                        linux,code = <106>; // 0x223
+                        linux,code = <547>; // 0x223
                 };
                 sw5 {
                         gpios = <&gpio3 RK_PD3 GPIO_ACTIVE_LOW>;
@@ -534,8 +534,8 @@
 				vactive = <1280>;
 				hback-porch = <20>;
 				hfront-porch = <24>;
-				vback-porch = <8>;
-				vfront-porch = <8>;
+				vback-porch = <9>;
+				vfront-porch = <9>;
 				hsync-len = <4>;
 				vsync-len = <4>;
 				hsync-active = <0>;
