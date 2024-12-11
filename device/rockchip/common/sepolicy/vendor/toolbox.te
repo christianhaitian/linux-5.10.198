@@ -1,4 +1,0 @@
-allow toolbox zram_device:blk_file rw_file_perms;
-allow toolbox ram_device:blk_file rw_file_perms;
-
-allowxperm toolbox zram_device:blk_file ioctl { 0x1272 };

@@ -1,2 +1,0 @@
-on boot
-setprop sys.usb.controller "ff300000.usb"
